@@ -7,8 +7,8 @@ class LocaleConvert {
   LocaleConvert(this.locale);
 
   static Map _local = {
-    'en': {'home': 'Home', 'setting': 'Setting', 'about': 'About'},
-    'ko': {'home': '홈', 'setting': '설정', 'about': '안내'}
+    'en': {'home': 'Home', 'setting': 'Setting', 'about': 'About', 'connectedAirPods': 'Connected AirPods'},
+    'ko': {'home': '홈', 'setting': '설정', 'about': '안내', 'connectedAirPods': '에어팟 연결'}
   };
 
   String l(String key) {

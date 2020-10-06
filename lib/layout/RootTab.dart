@@ -1,5 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:pod_stat/locale/LocaleConvert.dart';
+import 'package:pod_stat/page/HomePage.dart';
+import 'package:pod_stat/store/PodStatus.dart';
+import 'package:provider/provider.dart';
 
 class RootTab extends StatelessWidget {
   @override
@@ -36,40 +39,41 @@ class RootTab extends StatelessWidget {
       tabBuilder: (BuildContext context, int index) {
         return CupertinoTabView(
           builder: (BuildContext context) {
+            /// TODO: index 에 따라 다른 뷰 제공
             return CupertinoPageScaffold(
-              navigationBar: CupertinoNavigationBar(
-                middle: Text('Page 1 of tab $index'),
-              ),
-              child: Center(
-                child: CupertinoButton(
-                  child: const Text('Next page'),
-                  onPressed: () {
-                    Navigator.of(context).push(
-                      CupertinoPageRoute<void>(
-                        builder: (BuildContext context) {
-                          return CupertinoPageScaffold(
-                            navigationBar: CupertinoNavigationBar(
-                              middle: Text('Page 2 of tab $index'),
-                            ),
-                            child: Center(
-                              child: CupertinoButton(
-                                child: const Text('Back'),
-                                onPressed: () {
-                                  Navigator.of(context).pop();
-                                },
-                              ),
-                            ),
-                          );
-                        },
-                      ),
-                    );
-                  },
+                navigationBar: CupertinoNavigationBar(
+                  middle: Text('Page 1 of tab $index'),
                 ),
-              ),
-            );
+                child: ChangeNotifierProvider<PodStatus>(
+                    create: (_) => PodStatus(), child: HomePage()));
           },
         );
       },
     );
   }
 }
+
+// child: CupertinoButton(
+// child: const Text('Next page'),
+// onPressed: () {
+// Navigator.of(context).push(
+// CupertinoPageRoute<void>(
+// builder: (BuildContext context) {
+// return CupertinoPageScaffold(
+// navigationBar: CupertinoNavigationBar(
+// middle: Text('Page 2 of tab $index'),
+// ),
+// child: Center(
+// child: CupertinoButton(
+// child: const Text('Back'),
+// onPressed: () {
+// Navigator.of(context).pop();
+// },
+// ),
+// ),
+// );
+// },
+// ),
+// );
+// },
+// ),

@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:pod_stat/layout/RootTab.dart';
 import 'package:pod_stat/locale/LocaleConvert.dart';
-import 'package:pod_stat/page/RootPage.dart';
 
 void main() {
   runApp(MyApp());
