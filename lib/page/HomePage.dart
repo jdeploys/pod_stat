@@ -14,6 +14,30 @@ class HomePage extends StatelessWidget {
 
     return ListView(
       children: [
+        CupertinoButton(
+          onPressed: status.updateConnectFromBLE,
+          child: Container(
+            height: 200,
+            width: double.infinity,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("assets/img/air_pods_pro.png"),
+                fit: BoxFit.cover,
+              ),
+              borderRadius: BorderRadius.circular(12),
+            ),
+            /// Info Card
+            child: Container(
+              margin: EdgeInsets.fromLTRB(15, 15, 0, 0),
+              child: Text(
+                status.isConnected ? lang.l('connected') : lang.l('notConnected'),
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                    fontWeight: FontWeight.w600),
+              ),
+          ),
+        )),
         CupertinoListTile(
           title: lang.l('connectedAirPods'),
           trailing: CupertinoSwitch(

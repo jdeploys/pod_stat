@@ -10,8 +10,24 @@ class LocaleConvert {
   /// 필요한 경우 JSON 으로 변경
   /// 초기엔 간단한 구성으로 Map 으로 구현
   static Map _local = {
-    'en': {'home': 'Home', 'setting': 'Setting', 'about': 'About', 'connectedAirPods': 'Connected AirPods'},
-    'ko': {'home': '홈', 'setting': '설정', 'about': '안내', 'connectedAirPods': '에어팟 연결'}
+    'en': {
+      'appName': 'Pod Stat',
+      'home': 'Home',
+      'setting': 'Setting',
+      'about': 'About',
+      'connectedAirPods': 'Connected AirPods',
+      'connected': 'Connected',
+      'notConnected': 'Not Connected'
+    },
+    'ko': {
+      'appName': 'Pod Stat',
+      'home': '홈',
+      'setting': '설정',
+      'about': '안내',
+      'connectedAirPods': '에어팟 연결',
+      'connected': '연결됨',
+      'notConnected': '연결 안됨'
+    }
   };
 
   String l(String key) {

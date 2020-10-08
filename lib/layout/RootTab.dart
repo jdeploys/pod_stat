@@ -38,17 +38,30 @@ class RootTab extends StatelessWidget {
       ),
       tabBuilder: (BuildContext context, int index) {
         /// TODO: index 에 따라 다른 뷰 제공
-        return CupertinoTabView(
-          builder: (BuildContext context) {
-            return CupertinoPageScaffold(
-                navigationBar: CupertinoNavigationBar(
-                  middle: Text('Page 1 of tab $index'),
-                ),
-                child: ChangeNotifierProvider<PodStatus>(
-                    create: (_) => PodStatus(),
-                    child: HomePage()));
-          },
-        );
+        switch (index) {
+
+          /// Setting
+          case 1:
+            return null;
+
+          /// about
+          case 2:
+            return null;
+
+          /// home
+          case 0:
+          default:
+            return CupertinoTabView(
+              builder: (BuildContext context) {
+                return CupertinoPageScaffold(
+                    navigationBar: CupertinoNavigationBar(
+                      middle: Text(lang.l('appName')),
+                    ),
+                    child: ChangeNotifierProvider<PodStatus>(
+                        create: (_) => PodStatus(), child: HomePage()));
+              },
+            );
+        }
       },
     );
   }

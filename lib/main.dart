@@ -18,6 +18,6 @@ class MyApp extends StatelessWidget {
     ], supportedLocales: [
       Locale('en', 'US'),
       Locale('ko', '')
-    ], home: RootTab());
+    ], home: RootTab(), debugShowCheckedModeBanner: false);
   }
 }
