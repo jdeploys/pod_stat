@@ -40,7 +40,6 @@ class _StatefulStateCupertino extends State<CupertinoListTile> {
         widget.subtitle != null
             ? Text(widget.subtitle,
                 style: TextStyle(
-                  color: CupertinoColors.systemGrey,
                   fontSize: 20,
                 ))
             : SizedBox.shrink(),
